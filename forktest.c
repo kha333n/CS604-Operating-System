@@ -14,9 +14,11 @@ int main()
     }
     if(pid == 0) { /* Child */
         printf("Child created\n");
+        //paused just for testing...
         pause();
         if (execlp("/bin/ls", "ls", NULL)< 0) {
             printf("exec failed\n");
+            //paused just for testing...
             pause();
             exit(1);
         }
@@ -24,6 +26,7 @@ int main()
     else { /* Parent */
         wait(&status);
         printf("Well done kid!\n");
+        //paused just for testing...
         pause();
         exit(0);
     }
